@@ -1,0 +1,88 @@
+@import '@/assets/scss/parts/_vars.scss';
+@import '@/assets/scss/parts/_mixins.scss';
+
+.back-btn {
+    margin: 15px 0px;
+    background-color: $white;
+    padding: 10px 25px;
+    border: none;
+    border-radius: 10px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+    color: $very-dark-blue;
+
+    a {
+        text-decoration: none;
+    }
+}
+
+.country-section {
+    color: $very-dark-blue;
+    
+    .country-flag {
+        width: 50%;
+
+        img {
+            object-fit: cover;
+            width: 100%;
+        }
+    }
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    margin: 20px 0px;
+
+    h2 {
+        margin-bottom: 20px;
+    }
+
+    .country-stats {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+
+        div {
+            &:first-child {
+                margin-right: 20px;
+            }
+
+            p {
+                font-weight: 600;
+
+                span {
+                    font-weight: 300;
+                }
+            }
+        }
+    }
+
+    .border-countries {
+        width: 100%;
+        display: flex;
+        justify-content: flex-end;
+
+        p {
+            font-weight: 600;
+
+            span {
+                font-weight: 300;
+            }
+        }
+    }
+}
+
+@include for-mobile {
+    .country-stats {
+        flex-direction: column;
+        justify-content: center;
+
+        p {
+            line-height: 30px;    
+        }
+
+        div {
+            margin: 0;
+        }
+    }
+}

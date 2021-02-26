@@ -1,0 +1,74 @@
+@import '@/assets/scss/parts/_vars.scss';
+@import '@/assets/scss/parts/_mixins.scss';
+
+
+.search-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    .search-box {
+        width: 30%;
+        padding: 15px 25px;
+        margin-top: 20px;
+        display: flex;
+        background-color: $white;
+        box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+        border-radius: 10px;
+    
+        i {
+            color: $dark-gray;
+        }
+    
+        input {
+            border: none;
+            color: $dark-gray;
+            margin-left: 10px;
+            width: 100%;
+    
+            &::placeholder {
+                color: $dark-gray;
+            }
+        }
+    }   
+
+    .search-select {
+        display: flex;
+        align-items: center;
+        border-radius: 10px;
+        box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+        overflow: hidden;
+        background-color: $white;
+        
+        select {
+            padding: 15px 25px;
+            border: none;
+            appearance: none;
+        }
+
+        img {
+            margin-right: 10px;
+        }
+    }
+}
+
+@include for-tablet {
+    .search-container {
+
+        .search-box {
+            width: 70%;
+            margin-bottom: 15px;
+        }
+    }
+}
+
+@include for-mobile {
+    .search-container {
+        flex-direction: column;
+
+        .search-box {
+            width: 100%;
+            margin-bottom: 15px;
+        }
+    }
+}
