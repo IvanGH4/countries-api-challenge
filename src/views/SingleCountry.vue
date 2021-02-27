@@ -1,9 +1,9 @@
 <template>
   <div class="container">
-    <button class="back-btn">
-        <router-link to="/"><i class="fas fa-long-arrow-alt-left"></i> Back</router-link>
+    <button :class="[{'back-btn': true, 'dark': isDark}]">
+        <router-link to="/"><i :class="[{'fas fa-long-arrow-alt-left': true, 'dark': isDark}]"></i> <span :class="[{'dark': isDark}]">Back</span></router-link>
     </button>
-    <section class="country-section" v-for="item in country" :key="item">
+    <section :class="[{'country-section': true, 'dark': isDark}]" v-for="item in country" :key="item">
         <div class="country-flag">
             <img :src="item.flag" alt="flag" />
         </div>
@@ -32,6 +32,7 @@
 </template>
 
 <script>
+import { mapState } from 'vuex';
 export default {
     name: 'SingleCountry',
     data() {
@@ -53,6 +54,11 @@ export default {
                 console.log(error);
             }
         }
+    },
+    computed: {
+        ...mapState({
+            isDark: state => state.isDark
+        })
     }
 }
 </script>

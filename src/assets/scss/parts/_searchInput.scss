@@ -15,9 +15,11 @@
         background-color: $white;
         box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
         border-radius: 10px;
-    
-        i {
-            color: $dark-gray;
+        color: $very-dark-blue;
+
+        &.dark {
+            color: $white;
+            background-color: $dark-blue;
         }
     
         input {
@@ -25,9 +27,10 @@
             color: $dark-gray;
             margin-left: 10px;
             width: 100%;
-    
-            &::placeholder {
-                color: $dark-gray;
+            background: transparent;
+
+            &.dark {
+                color: $white;
             }
         }
     }   
@@ -39,14 +42,25 @@
         box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
         overflow: hidden;
         background-color: $white;
+        color: $very-dark-blue;
+
+        &.dark {
+            color: $white;
+            background-color: $dark-blue;
+        }
         
         select {
             padding: 15px 25px;
             border: none;
             appearance: none;
+            
+            &.dark {
+                background-color: $dark-blue;
+                color: $white;
+            }
         }
 
-        img {
+        i {
             margin-right: 10px;
         }
     }

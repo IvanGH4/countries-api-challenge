@@ -1,12 +1,12 @@
 <template>
   <div class="container">
     <div class="search-container">
-      <div class="search-box">
+      <div :class="[{'search-box': true, 'dark': isDark}]">
           <i class="fas fa-search"></i>
-          <input type="text" placeholder="Search for a country..." v-model="searchTerm" />
+          <input :class="[{'dark': isDark}]" type="text" placeholder="Search for a country..." v-model="searchTerm" />
       </div>
-      <div class="search-select">
-          <select name="region" id="region" v-model="region" @change="filterByRegion">
+      <div :class="[{'search-select': true, 'dark': isDark}]">
+          <select :class="[{'dark': isDark}]" name="region" id="region" v-model="region" @change="filterByRegion">
               <option value="">Region</option>
               <option value="Africa">Africa</option>
               <option value="Americas">Americas</option>
@@ -14,7 +14,8 @@
               <option value="Europe">Europe</option>
               <option value="Oceania">Oceania</option>
           </select>
-          <img src="@/assets/imgs/arrow-down.svg" width="15" height="15" alt="arrow-down" />
+          <!-- <img src="@/assets/imgs/arrow-down.svg" width="15" height="15" alt="arrow-down" /> -->
+          <i class="fas fa-chevron-down"></i>
       </div>
     </div>
     <!-- <BaseSearchInput /> -->
@@ -64,6 +65,7 @@ export default {
   computed: {
     ...mapState({
       countries: state => state.countries,
+      isDark: state => state.isDark
     }),
     filteredCountries() {
       return this.countries.filter((country) => {

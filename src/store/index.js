@@ -7,11 +7,15 @@ export default new Vuex.Store({
   namespaced: true,
   state: {
     countries: [],
+    isDark: false,
   },
   mutations: {
     mtnCountries(state, n) {
       state.countries = n;
     },
+    mtnIsDark(state, n) {
+      state.isDark = n;
+    }
   },
   actions: {
     setCountries: async({commit}) => {
@@ -24,6 +28,9 @@ export default new Vuex.Store({
         console.log(error);
       }
     },
+    setIsDark: ({commit}, n) => {
+      commit('mtnIsDark', n);
+    }
   },
   modules: {
   }

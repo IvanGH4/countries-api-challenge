@@ -9,8 +9,21 @@
     font-family: 'Nunito Sans', sans-serif;
 }
 
-body {
+// body {
+//     background-color: $very-light-gray;
+
+//     &.dark {
+//         background-color: $dark-blue-bg;
+//     }
+// }
+
+.app-container {
+    min-height: 100vh;
     background-color: $very-light-gray;
+
+    &.dark {
+        background-color: $dark-blue-bg;
+    }
 }
 
 a {
@@ -21,7 +34,6 @@ a {
     max-width: 1200px;
     margin: 0 auto;
 }
-
 
 @include for-tablet {
     .container {

@@ -8,15 +8,40 @@
     border: none;
     border-radius: 10px;
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
-    color: $very-dark-blue;
 
     a {
         text-decoration: none;
+        color: $very-dark-blue;
+    }
+    
+    i {
+        color: $very-dark-blue;
+
+        &.dark {
+            color: $white;
+        }
+    }
+
+    span {
+        color: $very-dark-blue;
+
+        &.dark {
+            color: $white;
+        }
+    }
+
+    &.dark {
+        color: $white;
+        background-color: $dark-blue;
     }
 }
 
 .country-section {
     color: $very-dark-blue;
+
+    &.dark {
+        color: $white;
+    }
     
     .country-flag {
         width: 50%;
@@ -67,6 +92,9 @@
 
             span {
                 font-weight: 300;
+                padding: 5px 15px;
+                border-radius: 5px;
+                box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
             }
         }
     }
